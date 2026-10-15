@@ -37,14 +37,22 @@ include_directories(include)
 
 # コンポーネント設定の便利関数
 function(custom_component target class_name)
-  # クラスローダーへの共有ライブラリの登録
-  rclcpp_components_register_node(${target}
-    PLUGIN ${class_name}
-    EXECUTABLE ${target})
+  # 共有ライブラリのビルド
+  add_library(${target} SHARED src/${target}.cpp)
+  target_compile_definitions(${target}
+    PRIVATE "HELLO_WORLD_BUILDING_DLL")
   ament_target_dependencies(${target}
     "rclcpp"
     "rclcpp_components"
     "hello_world_msgs")
+  # クラスローダーへの共有ライブラリの登録
+  rclcpp_components_register_node(${target}
+    PLUGIN ${class_name}
+    EXECUTABLE ${target}_node)
+  install(TARGETS ${target}
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin)
 endfunction()
 
 # 共有ライブラリの生成

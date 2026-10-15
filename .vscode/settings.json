@@ -1,0 +1,18 @@
+{
+    "cmake.sourceDirectory": "/workspaces/get-started-ros2/src/hello_world_msgs",
+    "ROS2.distro": "jazzy",
+    "python.autoComplete.extraPaths": [
+        "/workspaces/get-started-ros2/install/hello_world_msgs/lib/python3.12/site-packages",
+        "/workspaces/get-started-ros2/install/examples_rclpy_topics/lib/python3.12/site-packages",
+        "/workspaces/get-started-ros2/install/examples_rclpy_services/lib/python3.12/site-packages",
+        "/workspaces/get-started-ros2/install/examples_rclpy_actions/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/workspaces/get-started-ros2/install/hello_world_msgs/lib/python3.12/site-packages",
+        "/workspaces/get-started-ros2/install/examples_rclpy_topics/lib/python3.12/site-packages",
+        "/workspaces/get-started-ros2/install/examples_rclpy_services/lib/python3.12/site-packages",
+        "/workspaces/get-started-ros2/install/examples_rclpy_actions/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
+}

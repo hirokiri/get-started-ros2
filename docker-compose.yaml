@@ -1,0 +1,12 @@
+services:
+  ros2:
+    build: .
+    environment:
+      # Forward the host X11 display. Run `xhost +local:` on the host first.
+      - DISPLAY=${DISPLAY:-:0}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - .:/get-started-ros2
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.claude:/root/.claude
+    command: ["sleep", "infinity"]

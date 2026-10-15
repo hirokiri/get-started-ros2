@@ -42,3 +42,6 @@ install
 log
 
 src/dynamixel_hardware_examples
+
+# VS Code C/C++ IntelliSense databases
+.vscode/browse.vc*
