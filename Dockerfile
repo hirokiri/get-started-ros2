@@ -10,6 +10,7 @@ RUN apt-get update -y \
   x11-apps \
   xvfb \
   tmux \
+  vim \
   && rm -rf /var/lib/apt/lists/*
 
 COPY src /get-started-ros2/src
@@ -21,6 +22,9 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 ENV PATH="/root/.local/bin:${PATH}"
+
+# tmux
+RUN echo 'set -g mouse on' >> /root/.tmux.conf
 
 # Claude
 RUN curl -fsSL https://claude.ai/install.sh | bash
