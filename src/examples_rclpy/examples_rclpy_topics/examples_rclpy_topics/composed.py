@@ -16,7 +16,7 @@ import sys
 
 import rclpy
 from rclpy.executors import ExternalShutdownException
-from rclpy.executors import SingleThreadedExecutor
+from rclpy.executors import SingleThreadedExecutor, MultiThreadedExecutor
 
 from examples_rclpy_topics.publisher import MinimalPublisher
 from examples_rclpy_topics.subscriber import MinimalSubscriber
@@ -28,7 +28,8 @@ def main(args=None):
         publisher = MinimalPublisher()
         subscriber = MinimalSubscriber()
         # すべてのコールバックをメインスレッドで処理
-        executor = SingleThreadedExecutor()
+        # executor = SingleThreadedExecutor()
+        executor = MultiThreadedExecutor()
         # executorにすべてのノードを登録
         executor.add_node(publisher)
         executor.add_node(subscriber)

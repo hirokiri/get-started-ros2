@@ -9,4 +9,9 @@ services:
       - .:/get-started-ros2
       - /tmp/.X11-unix:/tmp/.X11-unix
       - $HOME/.claude:/root/.claude
+      - $HOME/.claude.json:/root/.claude.json
+      - $HOME/.tmux.conf:/root/.tmux.conf
+      - $HOME/.git-credentials:/root/.git-credentials
+      - $HOME/.gitconfig:/root/.gitconfig
+      - $HOME/.ssh:/root/.ssh
     command: ["sleep", "infinity"]

@@ -24,7 +24,7 @@ RUN apt-get update \
 ENV PATH="/root/.local/bin:${PATH}"
 
 # tmux
-RUN echo 'set -g mouse on' >> /root/.tmux.conf
+# RUN echo 'set -g mouse on' >> /root/.tmux.conf
 
 # Claude
 RUN curl -fsSL https://claude.ai/install.sh | bash
