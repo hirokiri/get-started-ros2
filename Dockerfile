@@ -11,6 +11,7 @@ RUN apt-get update -y \
   xvfb \
   tmux \
   vim \
+  gh \
   && rm -rf /var/lib/apt/lists/*
 
 COPY src /get-started-ros2/src
